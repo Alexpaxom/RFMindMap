@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Мой проект</title>
+		
+		{% load staticfiles %}
+
+		<link rel="stylesheet" href="{% static 'maindmap/styles/proj.css' %}">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
+		<script src="{% static 'maindmap/scripts/proj.js' %}"></script>
+	</head>
+	<body>
+		<div class="popap" hidden>
+			<div class="inner">
+				<textarea name="editor">Какой-то текст еще не понятно какой</textarea>
+                <script>
+                        CKEDITOR.replace( 'editor' );
+                </script>
+                <div class="buttons">
+	               <button>Отменить</button>
+	               <button>Сохранить</button>
+	            </div>
+			</div>
+		</div>
+		<div  class="map">
+			<div class="root node selected">
+				<div class="left tree">
+					<div class="childs">
+					</div>
+				</div>
+				<div class="nodeView"></div>
+				<div class="right tree">
+					<div class="childs">
+					</div>
+				</div>
+			</div>
+		</div>
+		<button id="save">Сохранить</button>
+	</body>
+</html>
