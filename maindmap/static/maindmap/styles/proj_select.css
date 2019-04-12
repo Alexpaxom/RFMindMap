@@ -1,0 +1,61 @@
+.popap{
+	position:fixed;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.9);
+	z-index: 500;
+}
+
+.popap .inner{
+	height: 100%;
+}
+
+.popap textarea[name="editor"]{
+	margin-top: 30px;
+	width: 100%;
+	height: 300px;
+}
+
+.popap .buttons{
+	padding: 10px 0;
+}
+
+.project,
+.new_project{
+	list-style: none;
+	display: inline-block;
+	width: 150px;
+	height: 180px;
+	cursor: pointer;
+	background-color: #DDD;
+	text-decoration:none;
+	color: #000;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid #000;
+}
+
+.project img{
+	width: 150px;
+	border-bottom: 1px solid #000;
+	background-color: magenta;
+}
+
+.project .name{
+	white-space: nowrap;
+	width: 120px;
+	height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+}
+
+select[name="fanctions"]{
+	position: absolute;
+	width: 20px;
+	bottom: 5px;
+	right: 5px;
+}
