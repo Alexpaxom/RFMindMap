@@ -11,20 +11,36 @@ body{
 	z-index: 500;
 }
 
-.popap .inner{
-	height: 100%;
-}
 .popap .buttons{
 	padding: 10px 0;
 }
 
+
+.map{
+	white-space: nowrap;
+}
+
 .node{
-	margin-bottom:10px;
+	position: relative;
+	padding: 5px;
+	border-left: 2px solid #000;
+}
+
+.node:not(.root):before{
+	padding:0;
+	margin:0;
+	display:block;
+	content: "";
+	height:2.1px;
+	width:10px;
+	background-color:#000;
+	position: absolute;
+	left:0;
+	top:50%;
 }
 
 .node.selected > .nodeView{
 	box-shadow: 0 0 10px rgba(0,0,0,0.9);
-
 }
 
 .node:after{
@@ -65,10 +81,51 @@ body{
 
 
 .childs{
-	padding: 5px 0;
-	border-left: 1px solid black;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	position: relative;
+}
+
+.childs:not(:empty):before{
+	padding:0;
+	margin:0;
+	display:block;
+	content: "";
+	height:2.1px;
+	width:5px;
+	background-color:#000;
+	position: absolute;
+	left:-5px;
+	top:50%;
+}
+
+.childs>:first-child,
+.childs>:last-child {
+	border-left: none;
+}
+
+.childs>:first-child:not(:last-child):after {
+	padding:0;
+	margin:0;
+	display:block;
+	content: "";
+	height:50%;
+	width:2.1px;
+	background-color:#000;
+	position: absolute;
+	left:0;
+	bottom:0px;
+}
+
+.childs>:last-child:not(:first-child):after {
+	padding:0;
+	margin:0;
+	display:block;
+	content: "";
+	height:50%;
+	width:2.1px;
+	background-color:#000;
+	position: absolute;
+	left:0;
+	top:0px;
 }
 
 /* right tree 

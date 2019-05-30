@@ -114,7 +114,7 @@ function getProject(id_proj){
 	jQuery.ajax({
 	 		"type": "GET",
 			"dataType":"json",
-			"url": "get",
+			"url": "get/",
 			"data":request,
 			"success": function(data){
 				console.log(data)
@@ -234,6 +234,8 @@ function editDescriptionNode(node_id){
 	CKEDITOR.replace( 'editor' );
 	CKEDITOR.instances["editor"].setData(jQuery(".node[node_id='"+ node_id +"'] > .nodeView .description").html());
 	CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+	CKEDITOR.config.width = "50%";
+	CKEDITOR.config.height = "100%";
 	jQuery(".popap").show()
 
 
@@ -252,6 +254,8 @@ function editNoteNode(node_id, data){
 	CKEDITOR.replace( 'editor' );
 	CKEDITOR.instances["editor"].setData(data[node_id]["note"]/*jQuery(".node[node_id='"+ node_id +"'] > .nodeView .note").html()*/);
 	//CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+	CKEDITOR.config.width = "50%";
+	CKEDITOR.config.height = "100%";
 	jQuery(".popap").show()
 
 
@@ -272,9 +276,9 @@ function removeNode(node_id, nodes){
 function saveProject(){
 	request = { "update":"", "id":window["mapMeta"]["id"], "data":JSON.stringify(window["mapData"]) };
 	jQuery.ajax({
-	 		"type": "GET",
+	 		"type": "POST",
 			"dataType":"json",
-			"url": "get",
+			"url": "get/",
 			"data":request,
 			"success": function(data){
 				alert("Данные успешно сохранены!");
